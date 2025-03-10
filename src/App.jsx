@@ -6,6 +6,7 @@ import Signup from './components/Signup'
 import Signin from './components/Signin'
 import { Routes, Route } from 'react-router-dom/dist'
 import Todo from './components/Todo'
+import ErrorPage from './components/ErrorPage'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -17,6 +18,7 @@ function App() {
           <Route path='/' element={<Signin/>}/>
           <Route path='/signup' element={<Signup/>}/>
           <Route path='/addtodo' element={<Todo/>}/>
+          <Route path='/error' element={<ErrorPage/>}/>
         </Routes>
         
       </div>

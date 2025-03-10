@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import axios from 'axios';
+import { Navigate, useNavigate } from 'react-router-dom';
 const Signup = () => {
     const [formData, setFormData] = useState({
         name: '',
@@ -11,6 +12,8 @@ const Signup = () => {
         type: 'student'
     });
    
+    const navigate = useNavigate()
+
     const [errors, setErrors] = useState({});
  
     const validate = () => {
@@ -35,9 +38,11 @@ const Signup = () => {
             try {
                 const response = await axios.post('http://192.168.11.77:8080/signup', formData);
                
-               
+               navigate("/")
                 console.log('Response:', response.data);
+                
             } catch (error) {
+                navigate("/error")
                 console.error('Error submitting form:', error);
             }
         }

@@ -34,6 +34,7 @@ export default function Signin() {
             navigate("/addtodo")
         } catch (err) {
             console.error('Login Error:', err);
+            navigate("/error")
             setError('Invalid email or password. Please try again.');
         }
     };
